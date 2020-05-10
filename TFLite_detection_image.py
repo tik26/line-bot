@@ -176,7 +176,7 @@ for image_path in images:
 
     # All the results have been drawn on the image, now display the image
     # cv2.imshow('Object detector', image)
-    
+    cv2.imwrite("static/images/result.jpg", image)
 
     # Press any key to continue to next image, or press 'q' to quit
     if cv2.waitKey(0) == ord('q'):
