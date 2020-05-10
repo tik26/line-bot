@@ -72,6 +72,8 @@ def handle_image(event):
             preview_image_url=FQDN + "/static/images/result.jpg"
         )
     )
+
+    os.remove("static/images/{}.jpg".format(event.message.id))
     # message_id = event.message.id
 
     # src_image_path = Path(SRC_IMAGE_PATH.format(message_id)).absolute()
