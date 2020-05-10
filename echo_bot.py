@@ -10,7 +10,7 @@ app = Flask(__name__)
 ECHO_BOT_ACCESS_TOKEN = os.environ["ECHO_BOT_ACCESS_TOKEN"]
 ECHO_BOT_CHANNEL_SECRET = os.environ["ECHO_BOT_CHANNEL_SECRET"]
 
-FQDN = https://dannybot.tk
+FQDN = "https://dannybot.tk"
 
 line_bot_api = LineBotApi(ECHO_BOT_ACCESS_TOKEN)
 handler = WebhookHandler(ECHO_BOT_CHANNEL_SECRET)
