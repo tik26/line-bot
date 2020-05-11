@@ -7,6 +7,7 @@ from pathlib import Path
 import subprocess
 import time
 import shlex
+from image_detection import detection
 
 app = Flask(__name__)
 
@@ -57,19 +58,22 @@ def handle_image(event):
     with open("static/images/" + event.message.id + ".jpg", "wb") as f:
         f.write(message_content.content)
 
+    detection(event.message.id)
     # time.sleep(3)
-    command = "python3 TFLite_detection_image.py --modeldir=Sample_TFLite_model --image=static/images/{}.jpg".format(event.message.id)
-    # subprocess.run([command], cwd="/home/pi/line-bot")
-    detect = subprocess.Popen(
-        shlex.split(command),
-        cwd='/home/pi/line-bot',
-    )
-    detect.wait()
+    # command = "python3 TFLite_detection_image.py --modeldir=Sample_TFLite_model --image=static/images/{}.jpg".format(event.message.id)
+    # # subprocess.run([command], cwd="/home/pi/line-bot")
+    # detect = subprocess.Popen(
+    #     shlex.split(command),
+    #     cwd='/home/pi/line-bot',
+    # )
+    # detect.wait()
+    # time.sleep(1)
+    result = '/static/images/{}_result.jpg'.format(event.message.id)
     line_bot_api.reply_message(
         event.reply_token,
         ImageSendMessage(
-            original_content_url=FQDN + "/static/images/result.jpg",
-            preview_image_url=FQDN + "/static/images/result.jpg"
+            original_content_url=FQDN + result,
+            preview_image_url=FQDN + result
         )
     )
 
