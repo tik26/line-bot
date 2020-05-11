@@ -78,26 +78,6 @@ def handle_image(event):
     )
 
     os.remove("static/images/{}.jpg".format(event.message.id))
-    # message_id = event.message.id
-
-    # src_image_path = Path(SRC_IMAGE_PATH.format(message_id)).absolute()
-    # main_image_path = MAIN_IMAGE_PATH.format(message_id)
-
-    # save_image(message_id, src_image_path)
-
-    # image_message = ImageSendMessage(
-    #     original_content_url=Path(main_image_path).absolute(), 
-    #     preview_image_url=Path(main_image_path).absolute()
-    # )
-
-    # # app.logger.info()
-    # line_bot_api.reply_message(event.reply_token, image_message)
-
-# def save_image(message_id: str, save_path: str):
-#     message_content = line_bot_api.get_message_content(message_id)
-#     with open(save_path, "wb") as f:
-#         for chunk in message_content.iter_content():
-#             f.write(chunk)
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
