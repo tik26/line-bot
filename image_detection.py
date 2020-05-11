@@ -178,11 +178,3 @@ def detection(message_id):
         # All the results have been drawn on the image, now display the image
         result = 'static/images/{}_result.jpg'.format(message_id)
         cv2.imwrite(result, image)
-        
-
-        # Press any key to continue to next image, or press 'q' to quit
-    #     if cv2.waitKey(0) == ord('q'):
-    #         break
-
-    # # Clean up
-    # cv2.destroyAllWindows()
