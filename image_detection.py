@@ -41,8 +41,8 @@ import importlib.util
 # args = parser.parse_args()
 def detection(message_id):
 
-    MODEL_NAME = 'Sample_TFLite_model'
-    GRAPH_NAME = 'detect.tflite'
+    MODEL_NAME = 'TFLite_mobilenet_v3'
+    GRAPH_NAME = 'model.tflite'
     LABELMAP_NAME = 'labelmap.txt'
     min_conf_threshold = 0.5
     use_TPU = None
