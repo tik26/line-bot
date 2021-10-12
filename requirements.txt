@@ -9,7 +9,7 @@ Jinja2==2.11.2
 line-bot-sdk==1.16.0
 MarkupSafe==1.1.1
 numpy==1.18.4
-opencv-python==3.4.6.27
+opencv-python==4.2.0.32
 requests==2.23.0
 # tflite-runtime==2.1.0.post1
 urllib3==1.25.9
