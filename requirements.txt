@@ -8,7 +8,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 line-bot-sdk==1.16.0
 MarkupSafe==1.1.1
-numpy==1.18.4
+numpy==1.22.0
 opencv-python==3.4.6.27
 requests==2.23.0
 # tflite-runtime==2.1.0.post1
